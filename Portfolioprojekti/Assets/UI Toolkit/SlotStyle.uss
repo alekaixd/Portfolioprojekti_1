@@ -1,0 +1,60 @@
+:root {
+    background-color: #676767;
+    align-items: center;
+}
+
+.slot-container {
+    background-color: #575757;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.ui-buttons-container {
+    height: 20%;
+    flex-direction: row;
+    margin: 3%;
+}
+
+.playfield {
+    background-color: #919191;
+    margin: 3%;
+    margin-bottom: 0%;
+    flex-direction: row;
+    aspect-ratio: 1.666666;
+    align-items: center;
+}
+
+.reel {
+    border-width: 2px;
+    border-color: black;
+    aspect-ratio: 0.34;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column-reverse;
+}
+
+.icon {
+    width: 100%;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    aspect-ratio: 1;
+    background-color: #f1f1f1;
+    border-width: 1px;
+    border-color: black;
+}
+
+.saldo {
+    align-items: center;
+    justify-content: center;
+    background-color: #a1a1a1;
+}
+
+.text-bar {
+    height: 50%;
+}
+
+.button-holder {
+    height: 50%;
+}

@@ -1,0 +1,54 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/SlotStyle.uss?fileID=7433441132597879392&amp;guid=73f5a62400c990c8899673568bb4a3a4&amp;type=3#SlotStyle"/>
+    <ui:VisualElement name="SlotContainer" class="slot-container" style="flex-grow: 1;">
+        <ui:VisualElement name="PlayField" class="playfield" style="flex-grow: 1;">
+            <ui:VisualElement name="Reel1" class="reel" style="flex-grow: 1;">
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Reel2" class="reel" style="flex-grow: 1;">
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Reel3" class="reel" style="flex-grow: 1;">
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Reel4" class="reel" style="flex-grow: 1;">
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Reel5" class="reel" style="flex-grow: 1;">
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="UIButtons" class="ui-buttons-container" style="flex-grow: 1;">
+            <ui:VisualElement name="Saldo" class="saldo" style="flex-grow: 1;">
+                <ui:Label text="Saldo: 1000€" name="SaldoText"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="UIMiddle" style="flex-grow: 1;">
+                <ui:VisualElement name="TextBar" class="text-bar" style="flex-grow: 1;">
+                    <ui:Label text="Onnea peliin :D" name="TextBarText"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="ButtonHolder" class="button-holder" style="flex-grow: 1;"/>
+            </ui:VisualElement>
+            <ui:Button text="Spin" name="SpinButton"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
