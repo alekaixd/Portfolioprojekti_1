@@ -3,39 +3,19 @@
     <ui:VisualElement name="SlotContainer" class="slot-container" style="flex-grow: 1;">
         <ui:VisualElement name="PlayField" class="playfield" style="flex-grow: 1;">
             <ui:VisualElement name="Reel1" class="reel" style="flex-grow: 1;">
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="IconHolder" class="icon-holder" style="translate: 0 -1px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="Reel2" class="reel" style="flex-grow: 1;">
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="IconHolder" class="icon-holder" style="translate: 0 -1px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="Reel3" class="reel" style="flex-grow: 1;">
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="IconHolder" class="icon-holder" style="translate: 0 -1px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="Reel4" class="reel" style="flex-grow: 1;">
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="IconHolder" class="icon-holder" style="translate: 0 -1px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="Reel5" class="reel" style="flex-grow: 1;">
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Icon" class="icon" style="flex-grow: 1;"/>
+                <ui:VisualElement name="IconHolder" class="icon-holder" style="translate: 0 -1px;"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="UIButtons" class="ui-buttons-container" style="flex-grow: 1;">
