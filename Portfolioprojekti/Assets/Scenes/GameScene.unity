@@ -393,6 +393,7 @@ MonoBehaviour:
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
+  result: 0
 --- !u!4 &1075149107
 Transform:
   m_ObjectHideFlags: 0
@@ -443,6 +444,7 @@ MonoBehaviour:
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
+  result: 0
 --- !u!4 &1114421539
 Transform:
   m_ObjectHideFlags: 0
@@ -493,6 +495,7 @@ MonoBehaviour:
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
+  result: 0
 --- !u!4 &1180023026
 Transform:
   m_ObjectHideFlags: 0
@@ -611,12 +614,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca95ba40108e94049734850d5b8b639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReelManager
+  sprites:
+  - {fileID: -3717208767352739922, guid: f321fbe92f2fafbc1b9cfef662c48161, type: 3}
+  - {fileID: 3869089830872016818, guid: 03a80507aab812c6e95629d763f6f39a, type: 3}
+  - {fileID: -8088562535063983670, guid: d5f46896a09519450b54951455d0e144, type: 3}
+  - {fileID: -6098811495627338115, guid: e3681e5513e31a39e85294a5237721b1, type: 3}
+  - {fileID: -6519123155424632109, guid: fc2b713c3c5a7cbfbbfe203df79a734e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   reels:
   - {fileID: 1180023025}
   - {fileID: 1075149106}
   - {fileID: 1114421538}
   - {fileID: 2018354972}
   - {fileID: 1706852189}
+  inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  spinSpeed: 0.2
 --- !u!1 &1706852188
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +665,7 @@ MonoBehaviour:
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
+  result: 0
 --- !u!4 &1706852190
 Transform:
   m_ObjectHideFlags: 0
@@ -839,6 +853,7 @@ MonoBehaviour:
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
+  result: 0
 --- !u!4 &2018354973
 Transform:
   m_ObjectHideFlags: 0

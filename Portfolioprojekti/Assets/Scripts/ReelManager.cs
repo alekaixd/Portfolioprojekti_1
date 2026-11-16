@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class ReelManager : MonoBehaviour
 {
@@ -30,17 +31,43 @@ public class ReelManager : MonoBehaviour
 
     private int[][] reelArrays = new int[][] { reelArray1, reelArray2, reelArray3, reelArray4, reelArray5 };
 
+    public Sprite[] sprites;
     public List<ReelController> reels;
+    
+    public SlotMachine slotMachine;
+    
+    public InputActionAsset inputActions;
+    private InputAction spinAction;
+    [SerializeField] private float spinSpeed;
+
+    void Awake()
+    {
+        //spinAction = inputActions.FindActionMap("SlotMachine").FindAction("Spin");
+        inputActions.FindActionMap("SlotMachine").FindAction("Spin").performed += OnSpin;
+        
+    }
 
     void Start()
     {
+        slotMachine = new SlotMachine();
+        slotMachine.SpinReels();
+
         int i = 0;
         foreach (ReelController reel in reels)
         {
             reel.iconArray = reelArrays[i];
+            reel.spinSpeed = spinSpeed;
             i++;
         }
 
     }
-
+    
+    public void OnSpin(InputAction.CallbackContext context)
+    {
+        Debug.Log("input");
+        foreach (ReelController reel in reels)
+        {
+            reel.currentState = reel.spinState;
+        }
+    }
 }
