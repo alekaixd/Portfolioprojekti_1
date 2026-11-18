@@ -110,5 +110,6 @@ InitTestScene*.unity*
 
 # odt metadata
 *.ods#
+*/build/
 
 */.vscode

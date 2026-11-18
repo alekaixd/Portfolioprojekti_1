@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using System;
 
 public class ReelManager : MonoBehaviour
 {
@@ -42,9 +43,14 @@ public class ReelManager : MonoBehaviour
 
     void Awake()
     {
-        //spinAction = inputActions.FindActionMap("SlotMachine").FindAction("Spin");
-        inputActions.FindActionMap("SlotMachine").FindAction("Spin").performed += OnSpin;
-        
+        Unsubscribe();
+        spinAction = inputActions.FindActionMap("SlotMachine").FindAction("Spin");
+        spinAction.performed += OnSpin;
+    }
+    
+    private void Unsubscribe()
+    {
+        if (spinAction != null) spinAction.performed -= OnSpin;
     }
 
     void Start()
@@ -57,6 +63,7 @@ public class ReelManager : MonoBehaviour
         {
             reel.iconArray = reelArrays[i];
             reel.spinSpeed = spinSpeed;
+            reel.reelIndex = i;
             i++;
         }
 

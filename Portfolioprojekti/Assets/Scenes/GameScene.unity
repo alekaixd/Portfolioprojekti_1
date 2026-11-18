@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReelController
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
-  reelName: Reel2
+  reelIndex: 0
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReelController
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
-  reelName: Reel3
+  reelIndex: 0
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReelController
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
-  reelName: Reel1
+  reelIndex: 0
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   - {fileID: 2018354972}
   - {fileID: 1706852189}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  spinSpeed: 0.2
+  spinSpeed: 0.04
 --- !u!1 &1706852188
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReelController
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
-  reelName: Reel5
+  reelIndex: 0
   iconArray: 
   spinSpeed: 1
   spinOffset: 0
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReelController
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
-  reelName: Reel4
+  reelIndex: 0
   iconArray: 
   spinSpeed: 1
   spinOffset: 0

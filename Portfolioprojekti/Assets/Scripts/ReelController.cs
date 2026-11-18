@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class ReelController : MonoBehaviour
 {
     public PanelRenderer m_panelRenderer;
-    // List<VisualElement> icons;
+    public List<VisualElement> icons;
 
     [HideInInspector] public IReelState currentState;
     [HideInInspector] public StandbyState standbyState;
@@ -15,7 +15,7 @@ public class ReelController : MonoBehaviour
 
     public VisualTreeAsset icon;
 
-    public string reelName;
+    public int reelIndex;
 
     public VisualElement reel;
 
@@ -48,7 +48,7 @@ public class ReelController : MonoBehaviour
 
     void OnUIReload(PanelRenderer pr, VisualElement root, int version)
     {
-        reel = root.Q<VisualElement>(reelName).Q<VisualElement>("IconHolder");
+        reel = root.Q<VisualElement>(AppConstants.UIReelNames[reelIndex]).Q<VisualElement>("IconHolder");
         instantiateIcons();
         //big wins
     }
@@ -63,7 +63,7 @@ public class ReelController : MonoBehaviour
 
         /*
         //käytä resolved style kun haluut jonkun asian renderöidyn koon
-        if (spinOffset >= reel.resolvedStyle.height / 5) // icon holderin korkeus / iconien määrällä
+        if (spinOffset >= reel.resolvedStyle.height / 2) // icon holderin korkeus / iconien määrällä
         {
             icons = reel.Query<VisualElement>("Icon").ToList();
             Debug.Log(icons[0].resolvedStyle.backgroundImage);
