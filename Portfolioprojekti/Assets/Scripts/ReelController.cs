@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class ReelController : MonoBehaviour
 {
     public PanelRenderer m_panelRenderer;
-    public List<VisualElement> icons;
+    public List<VisualElement> icons = new();
 
     [HideInInspector] public IReelState currentState;
     [HideInInspector] public StandbyState standbyState;
@@ -16,16 +16,19 @@ public class ReelController : MonoBehaviour
     public VisualTreeAsset icon;
 
     public int reelIndex;
+    public int visibleIcons = 3;
 
     public VisualElement reel;
 
     public int[] iconArray = { };
-    
-    private ReelManager reelManager;
+    public int currentIcon = 1; // keskimmäisin iconi
+
+    public ReelManager reelManager;
 
     [HideInInspector] public float spinSpeed = 1.0f;
-    [HideInInspector] public float spinOffset;
-    
+    /*[HideInInspector]*/
+    public float spinOffset;
+
     public int result;
 
     void Awake()
@@ -33,7 +36,7 @@ public class ReelController : MonoBehaviour
         standbyState = new StandbyState(this);
         spinState = new SpinState(this);
         stopState = new StopState(this);
-        
+
         reelManager = GameObject.Find("PanelRenderer").GetComponent<ReelManager>();
     }
 
@@ -63,7 +66,7 @@ public class ReelController : MonoBehaviour
 
         /*
         //käytä resolved style kun haluut jonkun asian renderöidyn koon
-        if (spinOffset >= reel.resolvedStyle.height / 2) // icon holderin korkeus / iconien määrällä
+        if (spinOffset >= reel.resolvedStyle.height / iconArray.Length) // icon holderin korkeus / iconien määrällä
         {
             icons = reel.Query<VisualElement>("Icon").ToList();
             Debug.Log(icons[0].resolvedStyle.backgroundImage);
@@ -71,18 +74,18 @@ public class ReelController : MonoBehaviour
             spinOffset = 0;
         }
         */
-
         // tapahtuu kun reelit lopettavat pyörimisen
 
     }
 
     private void instantiateIcons()
     {
-        foreach (int i in iconArray)
+        for (int i = 0; i < visibleIcons + 1; i++)
         {
             VisualElement instantiatedIcon = icon.Instantiate();
-            instantiatedIcon.style.backgroundImage = Background.FromSprite(reelManager.sprites[i]); 
+            instantiatedIcon.style.backgroundImage = Background.FromSprite(reelManager.sprites[iconArray[i]]);
             reel.Add(instantiatedIcon);
+            icons.Add(instantiatedIcon);
         }
 
     }

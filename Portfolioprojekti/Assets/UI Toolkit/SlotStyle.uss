@@ -55,6 +55,7 @@
     aspect-ratio: 1;
     border-width: 1px;
     border-color: black;
+
 }
 
 .saldo {

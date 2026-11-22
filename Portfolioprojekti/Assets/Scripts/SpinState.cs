@@ -4,6 +4,8 @@ using UnityEngine.UIElements;
 public class SpinState : IReelState
 {
     private ReelController reelController;
+    private float scrollDistance;
+    private int lastStepIndex = 0;
 
     public SpinState(ReelController reelCtrl)
     {
@@ -11,45 +13,53 @@ public class SpinState : IReelState
     }
     public void UpdateState()
     {
-        reelController.spinOffset += reelController.reel.resolvedStyle.height * reelController.spinSpeed * Time.deltaTime;
+        float iconHeight = reelController.reel.resolvedStyle.height / (reelController.visibleIcons + 1);
+        scrollDistance += reelController.spinSpeed * Time.deltaTime;
+        reelController.spinOffset = (scrollDistance % iconHeight);
         MoveReel(reelController.spinOffset);
+
+        int currentStep = Mathf.FloorToInt(scrollDistance / iconHeight);
+        if (currentStep != lastStepIndex)
+        {
+            lastStepIndex = currentStep;
+            UpdateIcons();
+        }
     }
-    
+
     public void ToSpinState()
     {
-        
+
     }
-    
+
     public void ToStandbyState()
     {
-        
+
     }
     public void ToStopState()
     {
-        
+
     }
 
     private void MoveReel(float offset)
     {
         reelController.reel.style.translate = new Translate(0, Length.Pixels(offset));
-        if (reelController.spinOffset >= reelController.reel.resolvedStyle.height / reelController.iconArray.Length) // icon holderin korkeus / iconien määrällä
-        {
-            reelController.icons = reelController.reel.Query<VisualElement>("Icon").ToList();
-            reelController.icons[0].BringToFront();
-            Debug.Log(reelController.icons[0]);
-            /*
-            for(int i = 0; i < reelController.iconArray.Length / 2; i++)
-            {
-                reelController.icons[i].BringToFront();
-            }
-            */
-
-            // reelController.spinOffset -= reelController.reel.resolvedStyle.height/2;
-            // reelController.spinOffset = 0 + reelController.reel.resolvedStyle.height * reelController.spinSpeed * Time.deltaTime;
-            reelController.spinOffset = 0;
-                
-        }
     }
-    
-   
+
+    private void UpdateIcons()
+    {
+        // funktio jossa iconi 1 -> 2 -> 3 -> 4 -> uusi iconi
+        // tähän saa kans tehtyy sillee et se ottaa ne iconit blurratuista versioista
+        //
+        // icons indexi 1 saa olla se keskimmäisin joka luetaan
+
+        reelController.currentIcon++;
+        int nextIcon = (reelController.currentIcon + 2) % reelController.iconArray.Length;
+        for (int i = 0; i < reelController.visibleIcons; i++)
+        {
+            reelController.icons[i].style.backgroundImage = reelController.icons[i + 1].style.backgroundImage;
+        }
+
+        //kammotus
+        reelController.icons[reelController.visibleIcons].style.backgroundImage = Background.FromSprite(reelController.reelManager.sprites[reelController.iconArray[nextIcon]]);
+    }
 }

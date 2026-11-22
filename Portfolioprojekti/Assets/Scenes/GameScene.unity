@@ -390,7 +390,10 @@ MonoBehaviour:
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
   reelIndex: 0
+  visibleIcons: 3
   iconArray: 
+  currentIcon: 1
+  reelManager: {fileID: 0}
   spinSpeed: 1
   spinOffset: 0
   result: 0
@@ -441,7 +444,10 @@ MonoBehaviour:
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
   reelIndex: 0
+  visibleIcons: 3
   iconArray: 
+  currentIcon: 1
+  reelManager: {fileID: 0}
   spinSpeed: 1
   spinOffset: 0
   result: 0
@@ -492,7 +498,10 @@ MonoBehaviour:
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
   reelIndex: 0
+  visibleIcons: 3
   iconArray: 
+  currentIcon: 1
+  reelManager: {fileID: 0}
   spinSpeed: 1
   spinOffset: 0
   result: 0
@@ -629,7 +638,7 @@ MonoBehaviour:
   - {fileID: 2018354972}
   - {fileID: 1706852189}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  spinSpeed: 0.04
+  spinSpeed: 1000
 --- !u!1 &1706852188
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +671,10 @@ MonoBehaviour:
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
   reelIndex: 0
+  visibleIcons: 3
   iconArray: 
+  currentIcon: 1
+  reelManager: {fileID: 0}
   spinSpeed: 1
   spinOffset: 0
   result: 0
@@ -850,7 +862,10 @@ MonoBehaviour:
   m_panelRenderer: {fileID: 0}
   icon: {fileID: 9197481963319205126, guid: fdbbf7b6b5d58f73b9f2518f9a624ee6, type: 3}
   reelIndex: 0
+  visibleIcons: 3
   iconArray: 
+  currentIcon: 1
+  reelManager: {fileID: 0}
   spinSpeed: 1
   spinOffset: 0
   result: 0
