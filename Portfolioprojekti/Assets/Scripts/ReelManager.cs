@@ -40,6 +40,9 @@ public class ReelManager : MonoBehaviour
     public InputActionAsset inputActions;
     private InputAction spinAction;
     [SerializeField] private float spinSpeed;
+    
+    public bool isSpinning = false;
+    public bool[] reelSpinState = new bool[5];
 
     void Awake()
     {
@@ -56,7 +59,6 @@ public class ReelManager : MonoBehaviour
     void Start()
     {
         slotMachine = new SlotMachine();
-        slotMachine.SpinReels();
 
         int i = 0;
         foreach (ReelController reel in reels)
@@ -71,10 +73,20 @@ public class ReelManager : MonoBehaviour
     
     public void OnSpin(InputAction.CallbackContext context)
     {
-        Debug.Log("input");
-        foreach (ReelController reel in reels)
+        if (!isSpinning)
         {
-            reel.currentState = reel.spinState;
+            isSpinning = true;
+            
+            int[] resultArr = slotMachine.SpinReels();
+            int i = 0;
+            foreach (ReelController reel in reels)
+            {
+                reel.currentState = reel.spinState;
+                reel.result = resultArr[i];
+                reelSpinState[i] = true;
+                i++;
+                //Debug.Log(reel.result);
+            }
         }
     }
 }

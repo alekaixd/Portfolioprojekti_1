@@ -57,21 +57,26 @@ public class SlotMachine
         }
     }
 
-    public void SpinReels()
+    public int[] SpinReels()
     {
         int[][] spinMatrix = new int[5][];
-        
+        int[] results = new int[5];
         
         for (int i = 0; i < 5; i++) 
         {
-            int[] result = reels[i].Spin();
+            int rnd = Random.Range(0, _reelArrays[i].Length);
+            int[] result = reels[i].GetSpinResult(rnd);
+            results[i] = rnd;
+
             spinMatrix[i] = new int[3];
             
             for (int n = 0; n < 3; n++) {
                 spinMatrix[i][n] = result[n];
             }
         }
+        CheckForWins(spinMatrix);
         
+        /*
         for (int i = 0; i < 3; i++)
         {
             for (int n = 0; n < 5; n++)
@@ -79,5 +84,53 @@ public class SlotMachine
                 Debug.Log(spinMatrix[n][i]);
             }
         }
+        */
+        
+        return results;
+    }
+    
+    private void CheckForWins(int[][] spinMatrix)
+    {
+        foreach(int[,] winline in _winlines)
+        {
+            CalculateWinline(winline,spinMatrix);
+        }
+    }
+    
+    //this shi crashign
+    private void CalculateWinline(int[,] winline, int[][] spinMatrix)
+    {
+        int symbol = 0;
+        for (int i = 0; i < 5; i++) 
+        {
+            for (int n = 0; n < 3; n++) 
+            {
+            if (winline[n,i] == 1) {
+                if (i == 0) {
+                    symbol = spinMatrix[i][n];
+                    continue;
+                } 
+                else if (spinMatrix[i][n] == symbol) {
+                    continue;
+                } 
+                else {
+                    if (i >= 3) {
+                        _WinMoney(symbol, i);
+                    }
+                    return;
+                }
+            }
+            }
+        }
+    }
+    
+    //huolestuttavaa sain viisi 10 riviin ja voitin 20?
+
+    private int _WinMoney(int symbol, int inARow)
+    {
+        int amount = paytable[symbol,inARow - 1];
+        // std::cout << "you won " << amount << std::endl;
+        Debug.Log("You won " + amount);
+        return amount;
     }
 }

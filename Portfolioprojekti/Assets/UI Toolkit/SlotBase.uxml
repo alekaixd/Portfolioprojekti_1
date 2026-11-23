@@ -19,16 +19,33 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="UIButtons" class="ui-buttons-container" style="flex-grow: 1;">
-            <ui:VisualElement name="Saldo" class="saldo" style="flex-grow: 1;">
+            <ui:VisualElement name="Saldo" class="saldo">
                 <ui:Label text="Saldo: 1000€" name="SaldoText"/>
             </ui:VisualElement>
-            <ui:VisualElement name="UIMiddle" style="flex-grow: 1;">
+            <ui:VisualElement name="UIMiddle" class="ui-middle">
                 <ui:VisualElement name="TextBar" class="text-bar" style="flex-grow: 1;">
                     <ui:Label text="Onnea peliin :D" name="TextBarText"/>
                 </ui:VisualElement>
-                <ui:VisualElement name="ButtonHolder" class="button-holder" style="flex-grow: 1;"/>
+                <ui:VisualElement name="ButtonHolder" class="button-holder">
+                    <ui:VisualElement name="BetAmount">
+                        <ui:Label text="Label" name="ButtonTitle" class="button-title"/>
+                        <ui:VisualElement name="Buttons" class="increment-buttons-container">
+                            <ui:Button text="" name="Left" class="left-button"/>
+                            <ui:Label text="Label" name="Value" class="button-value"/>
+                            <ui:Button text="" name="Right" class="right-button"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Winlines">
+                        <ui:Label text="Label" name="ButtonTitle" class="button-title"/>
+                        <ui:VisualElement name="Buttons" class="increment-buttons-container">
+                            <ui:Button text="" name="Left" class="left-button"/>
+                            <ui:Label text="Label" name="Value" class="button-value"/>
+                            <ui:Button text="" name="Right" class="right-button"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
             </ui:VisualElement>
-            <ui:Button text="Spin" name="SpinButton"/>
+            <ui:Button text="Spin" name="SpinButton" class="spin"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

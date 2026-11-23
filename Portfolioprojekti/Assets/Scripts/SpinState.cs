@@ -11,6 +11,7 @@ public class SpinState : IReelState
     {
         reelController = reelCtrl;
     }
+
     public void UpdateState()
     {
         float iconHeight = reelController.reel.resolvedStyle.height / (reelController.visibleIcons + 1);
@@ -28,7 +29,7 @@ public class SpinState : IReelState
 
     public void ToSpinState()
     {
-
+        
     }
 
     public void ToStandbyState()
@@ -37,7 +38,9 @@ public class SpinState : IReelState
     }
     public void ToStopState()
     {
-
+        reelController.currentState = reelController.stopState;
+        scrollDistance = 0;
+        lastStepIndex = 0;
     }
 
     private void MoveReel(float offset)
@@ -61,5 +64,29 @@ public class SpinState : IReelState
 
         //kammotus
         reelController.icons[reelController.visibleIcons].style.backgroundImage = Background.FromSprite(reelController.reelManager.sprites[reelController.iconArray[nextIcon]]);
+        
+        // katso onko seuraavan cyclin iconi reelController.result ja voiko pysähtyöä
+        if ((reelController.currentIcon + 3) % reelController.iconArray.Length == reelController.result && CanReelStop(reelController.reelIndex))
+        {
+            ToStopState();
+        } 
+    }
+    
+    private bool CanReelStop(int reelIndex)
+    {
+        if(reelIndex == 0)
+        {
+            reelController.reelManager.reelSpinState[reelIndex] = false;
+            return true;
+        }
+        for(int i = 0; i < reelIndex; i++)
+        {
+            if(reelController.reelManager.reelSpinState[i] == true)
+            {
+                return false;
+            }
+        }
+        reelController.reelManager.reelSpinState[reelIndex] = false;
+        return true;
     }
 }

@@ -9,13 +9,12 @@ public class SlotReel
         _reel = reelArray;
     }
     
-    public int[] Spin()
+    public int[] GetSpinResult(int reelIndex)
     {
         int[] result = new int[3];
-        int rnd = Random.Range(0, 63);
-        result[0] = _reel[rnd - 1 < 0 ? 63 : rnd - 1];
-        result[1] = _reel[rnd];
-        result[2] = _reel[rnd + 1 > 63 ? 0 : rnd + 1];
+        result[0] = _reel[reelIndex - 1 < 0 ? 63 : reelIndex - 1];
+        result[1] = _reel[reelIndex];
+        result[2] = _reel[reelIndex + 1 > 63 ? 0 : reelIndex + 1];
 
         return result;
     }

@@ -638,7 +638,9 @@ MonoBehaviour:
   - {fileID: 2018354972}
   - {fileID: 1706852189}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  spinSpeed: 1000
+  spinSpeed: 10000
+  isSpinning: 0
+  reelSpinState: 0000000000y
 --- !u!1 &1706852188
 GameObject:
   m_ObjectHideFlags: 0

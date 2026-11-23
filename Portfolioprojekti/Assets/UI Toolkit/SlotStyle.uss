@@ -14,12 +14,6 @@
     align-items: center;
 }
 
-.ui-buttons-container {
-    height: 20%;
-    flex-direction: row;
-    margin: 3%;
-}
-
 .playfield {
     background-color: #919191;
     margin: 3%;
@@ -62,12 +56,74 @@
     align-items: center;
     justify-content: center;
     background-color: #a1a1a1;
+    margin-right: 2%;
+}
+
+.spin {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: 2%;
+    aspect-ratio: 1;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.ui-middle {
+    height: 100%;
+    width: 60%;
+}
+
+.ui-buttons-container {
+    height: 20%;
+    flex-direction: row;
+    width: 85%;
+    margin: 1%;
+    margin-top: 2%;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .text-bar {
     height: 50%;
+    font-size: 24px;
+    -unity-text-align: middle-center;
+    background-color: black;
+    color: white;
+    justify-content: center;
 }
 
 .button-holder {
     height: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button-title {
+    -unity-text-align: middle-center;
+    justify-content: center;
+}
+
+.increment-buttons-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-button {
+    
+}
+
+.right-button {
+    
+}
+
+.button-value {
+    -unity-text-align: middle-center;
+    justify-content: center;
+
+    background-color: black;
+    color: white;
+    flex-grow: 0;
 }
