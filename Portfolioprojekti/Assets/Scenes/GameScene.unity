@@ -629,8 +629,8 @@ MonoBehaviour:
   - {fileID: -8088562535063983670, guid: d5f46896a09519450b54951455d0e144, type: 3}
   - {fileID: -6098811495627338115, guid: e3681e5513e31a39e85294a5237721b1, type: 3}
   - {fileID: -6519123155424632109, guid: fc2b713c3c5a7cbfbbfe203df79a734e, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8508160298161557688, guid: d894fd6b0582115ea84a74aca18ff732, type: 3}
+  - {fileID: 7245144254209785967, guid: a59aabfbdfa0c4439bb4d23c0b058017, type: 3}
   reels:
   - {fileID: 1180023025}
   - {fileID: 1075149106}
