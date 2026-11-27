@@ -2,80 +2,36 @@ using UnityEngine;
 
 public class SlotMachine
 {
-    static private int[] reelArray1 = new int[64] {0, 4, 2, 2, 0, 3, 5, 0, 3, 1, 0, 2, 3, 2, 2, 1,
-                        2, 1, 2, 4, 4, 0, 5, 0, 3, 3, 0, 1, 1, 0, 0, 3,
-                        0, 2, 1, 3, 5, 1, 3, 1, 5, 1, 1, 4, 6, 3, 6, 0,
-                        0, 4, 5, 6, 1, 1, 2, 4, 2, 2, 3, 0, 0, 1, 0, 1};
-
-    static private int[] reelArray2 = new int[64] {0, 3, 4, 2, 0, 1, 2, 4, 1, 4, 1, 0, 2, 2, 3, 0,
-                        1, 4, 3, 0, 4, 1, 0, 5, 0, 1, 3, 0, 0, 4, 1, 2,
-                        0, 6, 1, 2, 0, 2, 1, 3, 3, 1, 3, 0, 1, 3, 5, 2,
-                        2, 1, 2, 1, 5, 0, 3, 2, 0, 5, 0, 6, 3, 0, 5, 1};
-
-    static private int[] reelArray3 = new int[64] {1, 4, 4, 1, 2, 1, 0, 1, 1, 0, 1, 6, 2, 1, 0, 0,
-                        1, 5, 2, 2, 0, 0, 6, 0, 2, 3, 1, 0, 4, 0, 3, 0,
-                        4, 2, 2, 3, 2, 0, 1, 0, 2, 3, 4, 3, 5, 3, 0, 5,
-                        1, 0, 3, 0, 2, 1, 4, 2, 0, 0, 0, 1, 3, 3, 5, 4};
-
-    static private int[] reelArray4 = new int[64] {4, 3, 1, 1, 2, 6, 6, 5, 4, 2, 1, 2, 1, 0, 0, 1,
-                        1, 2, 1, 1, 1, 0, 5, 1, 3, 0, 2, 2, 0, 2, 0, 1,
-                        1, 3, 0, 0, 1, 0, 1, 4, 6, 0, 4, 2, 0, 2, 1, 4,
-                        3, 0, 3, 0, 0, 2, 4, 0, 0, 3, 5, 3, 2, 2, 3, 2};
-
-    static private int[] reelArray5 = new int[64] {6, 2, 3, 3, 2, 1, 5, 0, 4, 5, 1, 0, 1, 4, 0, 1,
-                        3, 1, 0, 3, 3, 2, 5, 0, 3, 5, 3, 1, 5, 3, 6, 2,
-                        0, 2, 4, 2, 0, 2, 4, 3, 4, 3, 0, 4, 4, 0, 0, 3,
-                        1, 4, 1, 1, 2, 5, 6, 1, 5, 6, 2, 0, 2, 5, 1, 4};
-
-    static private int[,] winline1 = {{0, 0, 0, 0, 0}, {1, 1, 1, 1, 1}, {0, 0, 0, 0, 0}};
-    static private int[,] winline2 = {{1, 1, 1, 1, 1}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}};
-    static private int[,] winline3 = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {1, 1, 1, 1, 1}};
-    static private int[,] winline4 = {{0, 0, 1, 0, 0}, {0, 1, 0, 1, 0}, {1, 0, 0, 0, 1}};
-    static private int[,] winline5 = {{1, 0, 0, 0, 1}, {0, 1, 0, 1, 0}, {0, 0, 1, 0, 0}};
-    static private int[,] winline6 = {{1, 1, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 1, 1}};
-    static private int[,] winline7 = {{0, 0, 0, 1, 1}, {0, 0, 1, 0, 0}, {1, 1, 0, 0, 0}};
-    static private int[,] winline8 = {{0, 0, 0, 0, 0}, {1, 0, 0, 0, 1}, {0, 1, 1, 1, 0}};
-    static private int[,] winline9 = {{0, 1, 1, 1, 0}, {1, 0, 0, 0, 1}, {0, 0, 0, 0, 0}};
-    static private int[,] winline10 = {{1, 0, 0, 0, 0}, {0, 1, 1, 1, 0}, {0, 0, 0, 0, 1}};
-    static private int[,] winline11 = {{0, 0, 0, 0, 1}, {0, 1, 1, 1, 0}, {1, 0, 0, 0, 0}};
-    
-    static private int[,] paytable = {
-    {0, 0, 5, 50, 100},     {0, 0, 10, 60, 125}, {0, 0, 15, 70, 150},
-    {0, 0, 20, 80, 175},    {0, 0, 25, 90, 200}, {0, 0, 50, 200, 800},
-    {0, 0, 100, 500, 1000},};
-
-    private int[][] _reelArrays = new int[][] { reelArray1, reelArray2, reelArray3, reelArray4, reelArray5 };
     private SlotReel[] reels = new SlotReel[5];
-    
-    private int[][,] _winlines = {winline1, winline2, winline3, winline4, winline5, winline6, winline7, winline8, winline9, winline10, winline11};
 
     public SlotMachine()
     {
         for (int i = 0; i < 5; i++)
         {
-            reels[i] = new SlotReel(_reelArrays[i]);
+            reels[i] = new SlotReel(AppConstants.reelArrays[i]);
         }
     }
 
     public int[] SpinReels()
     {
         int[][] spinMatrix = new int[5][];
-        int[] results = new int[5];
-        
-        for (int i = 0; i < 5; i++) 
+        int[] spinIndexes = new int[5];
+
+        for (int i = 0; i < 5; i++)
         {
-            int rnd = Random.Range(0, _reelArrays[i].Length);
+            int rnd = Random.Range(0, reels[i].GetLength());
             int[] result = reels[i].GetSpinResult(rnd);
-            results[i] = rnd;
+            spinIndexes[i] = rnd;
 
             spinMatrix[i] = new int[3];
-            
-            for (int n = 0; n < 3; n++) {
+
+            for (int n = 0; n < 3; n++)
+            {
                 spinMatrix[i][n] = result[n];
             }
         }
         CheckForWins(spinMatrix);
-        
+
         /*
         for (int i = 0; i < 3; i++)
         {
@@ -85,52 +41,82 @@ public class SlotMachine
             }
         }
         */
-        
-        return results;
+
+        return spinIndexes;
     }
-    
+
+    public int[] ForceWin(int symbol, int inARow, int[] payline)
+    {
+        // create spinmatrix which has all the numbers on the top.
+        // first it finds the first index with the symbol on all the reels
+        // then it adds the payline matrix to the indexes.
+        // then spin and calculate the wins
+
+        int[][] spinMatrix = new int[5][];
+
+        int[] result = new int[5];
+        for (int i = 0; i < result.Length; i++)
+        {
+            result[i] = reels[i].GetSymbolIndex(symbol);
+        }
+
+        for (int i = 0; i < result.Length; i++)
+        {
+            if (i < inARow)
+            {
+
+                // not sure if this has a bug with it going over 63
+                result[i] = result[i] + payline[i] - 1 < 0 ? reels[i].GetLength() - 1 : result[i] + payline[i] - 1;
+            }
+            else
+            {
+                result[i] = Random.Range(0, reels[i].GetLength());
+            }
+
+            int[] reelResult = reels[i].GetSpinResult(result[i]);
+
+            spinMatrix[i] = new int[3];
+
+            for (int n = 0; n < 3; n++)
+            {
+                spinMatrix[i][n] = reelResult[n];
+            }
+        }
+        CheckForWins(spinMatrix);
+
+        return result;
+    }
+
     private void CheckForWins(int[][] spinMatrix)
     {
-        foreach(int[,] winline in _winlines)
+        foreach (int[] winline in AppConstants.paylines)
         {
-            CalculateWinline(winline,spinMatrix);
-        }
-    }
-    
-    //this shi crashign
-    private void CalculateWinline(int[,] winline, int[][] spinMatrix)
-    {
-        int symbol = 0;
-        for (int i = 0; i < 5; i++) 
-        {
-            for (int n = 0; n < 3; n++) 
+            int symbol = spinMatrix[0][winline[0]];
+            for (int i = 1; i < 5; i++) //starting from 1 cuz we always check the first icon in symbol
             {
-            if (winline[n,i] == 1) {
-                if (i == 0) {
-                    symbol = spinMatrix[i][n];
-                    continue;
-                } 
-                else if (spinMatrix[i][n] == symbol) {
-                    continue;
-                } 
-                else {
-                    if (i >= 3) {
-                        _WinMoney(symbol, i);
-                    }
-                    return;
+                if (spinMatrix[i][winline[i]] != symbol && i >= 3)
+                {
+                    _WinMoney(symbol, i);
+                    break;
+                }
+                else if (spinMatrix[i][winline[i]] == symbol && i == 4)
+                {
+                    _WinMoney(symbol, i + 1);
+                    break;
+                }
+                else if (spinMatrix[i][winline[i]] != symbol)
+                {
+                    break;
                 }
             }
-            }
         }
     }
-    
-    //huolestuttavaa sain viisi 10 riviin ja voitin 20?
 
     private int _WinMoney(int symbol, int inARow)
     {
-        int amount = paytable[symbol,inARow - 1];
+        int amount = AppConstants.paytable[symbol, inARow - 1];
         // std::cout << "you won " << amount << std::endl;
-        Debug.Log("You won " + amount);
+        Debug.Log($"You won {amount} with {inARow} symbol {symbol}'s in a row");
         return amount;
     }
 }
